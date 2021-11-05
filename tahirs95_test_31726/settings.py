@@ -153,6 +153,12 @@ STATIC_URL = '/static/'
 
 MIDDLEWARE += ['whitenoise.middleware.WhiteNoiseMiddleware']
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+}
+
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend'
